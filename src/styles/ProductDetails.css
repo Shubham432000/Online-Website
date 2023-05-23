@@ -1,0 +1,44 @@
+.product1{
+    display:inline-flex;
+    flex-direction: row;
+    margin: 15px;
+}
+.product2{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: 3px 3px 3px 3px gray;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.zoomimg:hover{
+    -ms-transform: scale(1.1); 
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1);
+  transition: transform .3s;
+}
+
+.pagination{
+    margin-top: 20px;
+}
+.button1{
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+.button2{
+    margin: 7px;
+    padding: 5px 10px 5px 10px;
+    background-color: black;
+    color: white;
+}
+.button1:hover{
+    color: black;
+    background-color: white;
+}
+.button2:hover{
+    color: red;
+    background-color: white;
+}
