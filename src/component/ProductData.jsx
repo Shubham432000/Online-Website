@@ -1,3 +1,18 @@
+// interface  userType{
+//   id:number,
+//   name:string,
+//   imgdata:string,
+//   companyname:string,
+//   orderplaced:string,
+//   price:number,
+//   rating:string,
+//   arrimg:string,
+//   qnty:number,
+//   category:string,
+//   discount:string,
+//   oldprice:number
+// }
+
 const ProductData = [
   {
     id: 1,
@@ -47,7 +62,7 @@ const ProductData = [
     arrimg:
       "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
     qnty: 0,
-    category: "pizza",
+    
     category: "earphone",
     discount:"20%",
     oldprice:80

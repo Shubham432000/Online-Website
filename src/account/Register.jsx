@@ -1,25 +1,39 @@
-import React, { useState } from "react";
-import "../styles/Register.css";
+import React, { useState } from 'react';
 
-const Register = () => {
+import '../styles/Register.css';
+import { useNavigate } from 'react-router-dom';
+
+const Register = ({ authRegister }) => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [mobile, setMobile] = useState();
   const [password, setPassword] = useState();
+
+  const navigate = useNavigate();
   const Validation = () => {
     if (!name) {
-      alert("Name required");
+      alert('Name required');
+      return false;
     } else if (!email) {
-      alert("Email required");
+      alert('Email required');
+      return false;
     } else if (!mobile) {
-      alert("mobile required");
+      alert('mobile required');
+      return false;
     } else if (!password) {
-      alert("password required");
+      alert('password required');
+      return false;
+    }else{
+      return true
     }
   };
   const submit = (e) => {
     e.preventDefault();
-    Validation();
+    
+    if (Validation()) {
+      authRegister({ name, email, mobile, password });
+      navigate('/login');
+    }
   };
 
   return (
@@ -30,24 +44,16 @@ const Register = () => {
             <label className="label1">Name</label>
             <input className="input1" type="text" onChange={(e) => setName(e.target.value)} />
             <label className="label1">Email</label>
-            <input
-              className="input1"
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
+            <input className="input1" type="email" onChange={(e) => setEmail(e.target.value)} />
             <label className="label1">Mobile</label>
-            <input
-              className="input1"
-              type="number"
-              onChange={(e) => setMobile(e.target.value)}
-            />
+            <input className="input1" type="number" onChange={(e) => setMobile(e.target.value)} />
             <label className="label1">Password</label>
             <input
               className="input1"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="button1" type="submit">
+            <button className="paginationbutton2" type="submit">
               Submit
             </button>
           </form>
